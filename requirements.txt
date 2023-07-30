@@ -1,3 +1,6 @@
+
+gunicorn
+psycopg2
 Flask
 Flask-Babel==2.0.0
 Flask-Bootstrap==3.3.7.1
@@ -21,5 +24,3 @@ PyMySQL==1.1.0
 python-dotenv
 
 requests
-
-
