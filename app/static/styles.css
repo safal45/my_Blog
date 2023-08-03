@@ -1,0 +1,330 @@
+/* styles.css */
+
+/* Add your custom styles here */
+
+/* Example Tailwind CSS classes */
+/* .bg-primary {
+    background-color: #353332;
+}
+
+.text-white {
+    color: #fff;
+} */
+body {
+background-image: linear-gradient(90deg,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+}
+.colorman .form .btn {
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 40px;
+            width: 100px;
+            margin-left: 35%;
+            text-align: center;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7px;
+          }
+
+.colorman .addpostbtn .btn {
+     background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+             height: 40px;
+            width: 100px;
+            text-align: center;
+
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7px;
+          }
+.addpostbtn {
+    color: white;
+}
+.colormana .form .btn {
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 40px;
+            width: 40%;
+            margin-left: 30%;
+            text-align: center;
+            
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7px;
+          }
+          .colormana .form .form-control{
+
+            margin-left: -1px;
+            margin-right: 193px;
+          }
+         
+          .colorma .form .btn {
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+             height: 40px;
+            width: 100px;
+            text-align: center;
+
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            padding-top: 7px;
+          }
+
+
+.colorman .form .btn:hover {
+             
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;         
+        
+         
+}
+.colorman{
+    color: rgb(255, 247, 247);
+}
+.colormana{
+    color: rgb(255, 247, 247);
+}
+.colorma{
+    color: rgb(255, 247, 247);
+}
+.username{
+    display: flex;
+    justify-content: start;
+    color: white;
+}
+.pagin a {
+     background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            text-align: center;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 9px;
+
+}
+.pagin:hover{ 
+    background-position: right center; /* change the direction of the change here */
+            color: rgb(0, 0, 0);
+            text-decoration: none;    
+
+}
+
+.mynav{
+
+
+background-image: linear-gradient( 90deg,  rgb(1, 1, 48) 11.2%, rgb(29, 30, 34) 91.2% );
+position: fixed;
+
+}
+
+
+.mynav a { 
+    color: white;
+
+   
+}
+
+.mylogin{
+    width: 370px;
+}
+.mysign{
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+
+.myflash{
+  background-image: radial-gradient( circle 897px at 9% 80.3%,  rgba(55,60,245,1) 0%, rgba(234,161,15,0.90) 100.2% );
+   color: rgb(255, 255, 255);
+   height: 35px;
+    width: 270px;
+    text-align: center;
+    text-shadow: blanchedalmond;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center;
+}
+
+
+
+       
+
+       /* Styling for the post container */
+.post-container {
+    background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 19px;
+}
+.post-container:hover{
+     transform: scale(1.02);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the post avatar */
+.post-avatar {
+    margin-right: 10px;
+}
+
+/* Styling for the rounded avatar */
+.post-avatar img.rounded-full {
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the post content */
+.post-content {
+    flex: 1;
+}
+
+/* Styling for the post info */
+.post-info {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+/* Add styles for the user note and transparent container */
+
+
+.transparent-container {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 19px;
+    color: white;
+    display: flex;
+    justify-content: start;
+    
+}
+
+/* Update the position of the add post button */
+.position-fixed {
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Custom style for the circular button */
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation class */
+.animate__bounceIn {
+    animation-name: bounceIn;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.Rspass{
+    width:100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    /* border:2px solid yellow; */
+
+
+}
+.Resetpass {
+    /* border:2px solid red; */
+    width: 32%;
+}
+.myform{
+    margin-top: px;
+}
+.Resetpass .form .btn {
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 38px;
+            text-align: center;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            padding-top: 9px;
+            margin-top:8px;
+            margin-left: 33%;
+            font-size: 8px;
+          }
+
+.follow{
+
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 33px;
+            width: 66px;
+            text-align: center;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+          }
+          .unfollow{
+
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 33px;
+            width: 78px;
+            text-align: center;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+          }

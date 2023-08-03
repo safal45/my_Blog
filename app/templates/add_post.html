@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <div class="colorman container"> {# Add the 'container' class and top margin #}
+        <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+        {% if form %}
+            <form class="addpostbtn" method="post">
+                {{ wtf.quick_form(form) }}
+                <br>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

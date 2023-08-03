@@ -1,16 +1,20 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
-
+{% import 'bootstrap/wtf.html' as wtf %}    
 {% block app_content %}
-    <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+    <h1 class="username"> Hi, <span>{{ _('%(username)s', username=current_user.username) }}</span> 👋</h1>
     {% if form %}
+    <div class="colorma">
     {{ wtf.quick_form(form) }}
+    </div>
     <br>
     {% endif %}
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
-    <nav aria-label="...">
+    </div>
+</div>
+
+    <nav class="pagin" aria-label="...">
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
@@ -22,6 +26,60 @@
                     {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+
+    
+    
+    <style>
+        /* Custom style for the circular button */
+        .btn-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation class */
+        .animate__bounceIn {
+            animation-name: bounceIn;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        // Add animation for the button on click
+        function animateButton() {
+            const button = document.querySelector('.btn-circle');
+            button.classList.add('animate__animated', 'animate__bounceIn');
+
+            // Remove the animation class after a delay to allow the animation to complete
+            setTimeout(function () {
+                button.classList.remove('animate__animated', 'animate__bounceIn');
+            }, 1000);
+        }
+    </script>
 {% endblock %}

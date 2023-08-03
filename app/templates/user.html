@@ -1,40 +1,118 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    {% include 'base.html' %}
+    <style>
 
-{% block app_content %}
-    <table class="table table-hover">
-        <tr>
-            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
-            <td>
-                <h1>{{ _('User') }}: {{ user.username }}</h1>
-                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+        /* Style the user profile section */
+        .user-profile {
+            transition: transform 0.2s;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            background-blend-mode: multiply,multiply;
+        }
+
+        .user-profile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the posts */
+        ._post {
+            transition: transform 0.2s;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            background-blend-mode: multiply,multiply;
+          }
+
+
+
+        /* Floating action button */
+        .myfab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            transition: transform 0.2s;
+            margin-bottom: 28px;
+        }
+
+        .myfab:hover {
+            transform: scale(1.1);
+            background-color: #25b9d4;
+        }
+        .bdpost {
+             transition: transform 0.2s;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            background-blend-mode: multiply,multiply;
+        }
+        .addpst {
+            display: flex;
+            justify-content: center;
+}
+.editpro:hover {
+       color: black;
+
+}
+    </style>
+</head>
+<body class="bg-gray-100">
+    {% block app_content %}
+        <div class="container mx-auto p-8">
+            <div class="user-profile rounded-lg shadow-lg p-8">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="{{ user.avatar(128) }}" class="w-16 h-16 rounded-full shadow-md avatar-image" alt="User Profile Picture">
+                    <h1 class="text-2xl font-bold text-white">{{ _('User') }}: {{ user.username }}</h1>
+                </div>
+                {% if user.about_me %}
+                    <p class="font-semibold">{{ user.about_me }}</p>
+                {% endif %}
                 {% if user.last_seen %}
-                <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
+                    <p class="mt-2 font-semibold">{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
                 {% endif %}
-                <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
+                <p class="mt-2 font-semibold">{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
                 {% if user == current_user %}
-                <p><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></p>
+                    <p class="mt-4"><a href="{{ url_for('main.edit_profile') }}" class=" editpro text-white underline">{{ _('Edit your profile') }}</a></p>
                 {% elif not current_user.is_following(user) %}
-                <p>
-                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post" class="mt-4">
                         {{ form.hidden_tag() }}
-                        {{ form.submit(value=_('Follow'), class_='btn btn-default') }}
+                        <button type="submit" class="follow" >{{ _('Follow') }}</button>
                     </form>
-                </p>
                 {% else %}
-                <p>
-                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post" class="mt-4">
                         {{ form.hidden_tag() }}
-                        {{ form.submit(value=_('Unfollow'), class_='btn btn-default') }}
+                        <button type="submit" class="unfollow">{{ _('Unfollow') }}</button>
                     </form>
-                </p>
                 {% endif %}
-            </td>
-        </tr>
-    </table>
-    {% for post in posts %}
-        {% include '_post.html' %}
-    {% endfor %}
-    <nav aria-label="...">
+          
+                
+            </div>
+        </div>
+
+        <div class=" bdpost container mx-auto p-4 mt-4 rounded-lg shadow">
+            <h2 class="text-2xl font-bold mb-4 text-white">{{ _('User Posts') }}</h2>
+            {% for post in posts %}
+                <div class="_post">
+                    <h2 class="text-xl font-semibold text-blue-600">{{ post.title }}</h2>
+                    <p>{% include '_post.html' %}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        
+    <nav class="pagin" aria-label="...">
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
@@ -46,6 +124,16 @@
                     {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
-        </ul>
-    </nav>
-{% endblock %}
+            </ul>
+        </nav>
+        <form action="{{ url_for('main.add_post') }}" method="get">
+           {{ form.hidden_tag() }}
+          <button class="myfab bg-blue-600 text-white" title="Add Post">Add Post</button>
+      </form>
+
+
+        
+    {% endblock %}
+
+</body>
+</html>
