@@ -71,6 +71,28 @@ background-image: linear-gradient(90deg,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 10
             margin-left: -1px;
             margin-right: 193px;
           }
+          .colormanna .form .btn {
+            background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
+            height: 37px;
+            width: 32%;
+            margin-left: 33%;
+            text-align: center;
+            margin-top: 7px;
+            transition: 0.9s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7px;
+          } 
+          .colormanna .form .form-control{
+
+            margin-left: -1px;
+            margin-right: 193px;
+          }
          
           .colorma .form .btn {
             background-image: linear-gradient(to right, #050033 0%, #53346D  51%, #000000  100%);
@@ -102,6 +124,9 @@ background-image: linear-gradient(90deg,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 10
     color: rgb(255, 247, 247);
 }
 .colorma{
+    color: rgb(255, 247, 247);
+}
+.colormanna{
     color: rgb(255, 247, 247);
 }
 .username{
@@ -156,8 +181,10 @@ position: fixed;
 }
 
 .myflash{
-  background-image: radial-gradient( circle 897px at 9% 80.3%,  rgba(55,60,245,1) 0%, rgba(234,161,15,0.90) 100.2% );
-   color: rgb(255, 255, 255);
+  background: #485563;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
    height: 35px;
     width: 270px;
     text-align: center;
@@ -165,6 +192,7 @@ position: fixed;
     display: flex;
     align-items: center; /* Vertically center the content */
     justify-content: center;
+    margin-left: 38%;
 }
 
 
